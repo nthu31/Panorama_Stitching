@@ -13,9 +13,9 @@ from RANSACFit import RANSACFit
 from PairStitch import PairStitch
 
 #%% Paths
-saveFileName = '../results/uttower_pano.jpg'
-img1Path = '../data/uttower1.jpg'
-img2Path = '../data/uttower2.jpg'
+saveFileName = '../results/MelakwaLake_pano.png'
+img1Path = '../data/MelakwaLake2.png'
+img2Path = '../data/MelakwaLake1.png'
 
 #%% Load image
 img1 = Image.open(img1Path, 'r')
@@ -76,5 +76,5 @@ minInliersForAcceptance = np.ceil(0.3 * len(M))
 H = RANSACFit(pointsInImage1, pointsInImage2, M, maxIter, seedSetSize, maxInlierErrorPixels, minInliersForAcceptance)
 #%% Make Panoramic image
 Pano = PairStitch(img1, img2, H, saveFileName)
-print('Panorama was saved as uttower_pano.jpg', saveFileName)
-plt.imshow(Image.open(saveFileName))
+print('Panorama was saved as *_pano.jpg', saveFileName)
+#plt.imshow(Image.open(saveFileName))

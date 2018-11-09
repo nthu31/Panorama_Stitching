@@ -38,8 +38,8 @@ Thre = 0.5;
 RESIZE = 0.6
 
 #%% Load a list of images (Change file name if you want to use other images)
-imgList = glob('../data/Rainier*.png')
-saveFileName = '../results/pano.jpg'
+imgList = glob('../data/yosemite*.jpg')
+saveFileName = '../results/yosemite_pano.jpg'
 
 #%% Add path
 Images = {}

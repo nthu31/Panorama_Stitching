@@ -108,12 +108,6 @@ def ComputeError(H, pt1, pt2, match):
     m2 = pt2[match[:,1], :]
 
     M1 = np.concatenate([m1.T, np.ones([1,N])], axis=0)
-    '''
-    y_hat = np.matmul(H, M1).T
-    m2_hat = y_hat[:,0:2]
-    differences = m2_hat - m2
-    dists = np.sqrt(np.sum(np.square(differences), axis=1))
-    '''
     y_hat = np.matmul(M1.T, H.T)
     m2_hat = y_hat[:,0:2]
     differences = m2 - m2_hat
